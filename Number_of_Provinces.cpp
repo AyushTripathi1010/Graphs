@@ -1,3 +1,5 @@
+// GFG LINK : https://practice.geeksforgeeks.org/problems/number-of-provinces/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=number-of-provinces 
+
 class Disjoint
 {
     public: 
@@ -57,6 +59,8 @@ class Solution {
             }
         }
         
+        // number of provinces are those whose parent is equal
+        // to node itself.
         for(int i =0 ;i < V ; i++)
         {
             if(ds.parent[i] == i ) cnt++;
