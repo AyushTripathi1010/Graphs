@@ -19,11 +19,22 @@
 // vec.pop_back() se pop karenge and dusra possible transformation 
 // banaayenge , eg: vec = {dot , dot}.
 
+// hum immediate erase nhi kr rhe hai set se kyuki it is possible that ki ek word
+// multiple sequence bana rha ho.
+
 // And jaise hi hum ab length 3 ke list banaayenge, then ham cog and dot
 // ko set me se erase kr degne with the help of usedOnLevel array.
 
 // Note: We will only erase from the set if all the 'L' length lists
 // have been made.
+
+// Why to not immediately delete from set when a word is found.
+// ans.) Consider example: der dfr dfs
+//                         der des dfs
+
+// In the above example the first list of length 3 that we encoundter is: der -> dfe -> dfs.
+// So if we instantly delete dfs from set, then we will not be able to form another list 
+// that is : der -> des -> dfs.
 
 
 
@@ -68,11 +79,12 @@ public:
             
             if(word ==  endWord)
             {
-                if(ans.size() == 0)
+                if(ans.size() == 0)  // agar ans abhi empty hai to bas enter mardo
                 {
                     ans.push_back(vec);
                 }
-                else if(ans[0].size()== vec.size())
+                else if(ans[0].size()== vec.size()) // lekin ans me already 'L' length ki list hai to jo agli list aayegi vo bhi 'L' length ki honi chaahiye.
+                    // kyuki shortest length to ek hi hoga na.
                 {
                     ans.push_back(vec);
                 }
