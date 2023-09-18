@@ -1,9 +1,14 @@
 // GFG LINK : https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=strongly-connected-components-kosarajus-algo
 
-//  Strongly Connected Components in a graph are those nodes which are 
-// connected to every other node in the graph.
-// In this question we have to find the count of strongly connected components.
-// FOr which we are applying the KosaRaju algorithm.
+//  Strongly Connected Components refers to subgraphs within a directed graph where
+//  every vertex is reachable from every other vertex within that subgraph.
+
+//  We can infer one thing from above statement that a strongly connected graph is always
+//  cyclic graph.
+// A single node is also a strongly connected component.
+
+//  In this question we have to find the count of strongly connected components.
+//  For which we are applying the KosaRaju algorithm.
 
 
 // the reversing of graph doesn't affect the internal strongly connected components
@@ -51,7 +56,7 @@ class Solution
         
          
         //  Step 1 : Sort all the nodes according to finishing time, that is
-        // a node can which is terminal will finish first and will be pushed in the
+        // a node which is a terminal will finish first and will be pushed in the
         // stack.
         // so idea is kind of topo sort.
         
