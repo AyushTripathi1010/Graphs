@@ -2,42 +2,44 @@ class Solution
 {
 	public:
 	//Function to return list containing vertices in Topological order.
-// 	void dfs(int node,  int *vis  , vector<int> adj[] , stack<int> &st)
-// 	{
-// 	    vis[node] = 1;
+	void dfs(int node,  int *vis  , vector<int> adj[] , stack<int> &st)
+	{
+	    vis[node] = 1;
 	    
-// 	    for(auto elem : adj[node])
-// 	    {
-// 	        if(!vis[elem])
-// 	        {
-// 	            dfs(elem , vis, adj, st);
-// 	        }
-// 	    }
-// 	    st.push(node);
+	    for(auto elem : adj[node])
+	    {
+	        if(!vis[elem])
+	        {
+	            dfs(elem , vis, adj, st);
+	        }
+	    }
+	    st.push(node);
 	    
-// 	}
+	}
 
  
 	vector<int> topoSort(int V, vector<int> adj[]) 
 	{
-	    // code here
+	    // DFS Solution
 	    
-	   // vector<int> topo;
-	   // stack<int> st;
-	   // int vis[V] = {0};
-	   // for(int i =0 ; i < V; i++)
-	   // {
-	   //     if(!vis[i])
-	   //     {
-	   //         dfs(i , vis, adj, st );
-	   //     }
-	   // }
+	   vector<int> topo;
+	   stack<int> st;
+	   int vis[V] = {0};
+	   for(int i =0 ; i < V; i++)
+	   {
+	       if(!vis[i])
+	       {
+	           dfs(i , vis, adj, st );
+	       }
+	   }
 	    
-	   // while(!st.empty())
-	   // {   
-	   //     topo.push_back(st.top());
-	   //     st.pop();
-	   // }
+	   while(!st.empty())
+	   {   
+	       topo.push_back(st.top());
+	       st.pop();
+	   }
+
+		// ----------------------------------- BFS Solution Below ---------------------------------------------//
 	   
 	     vector<int> topo;
 	     vector<int> indeg(V , 0);
