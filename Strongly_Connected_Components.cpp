@@ -81,7 +81,7 @@ class Solution
         }
         
         // Now do the dfs again and count the number of ssc's, by popping every element
-        // of stack, and this time dfs will be call on reversed graph adjaceny list.
+        // of stack, and this time dfs will be call on reversed graph adjaceny list./
           int scc = 0;
          while(!st.empty())
          {
