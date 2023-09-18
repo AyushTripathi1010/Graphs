@@ -14,6 +14,9 @@ class Solution
     //  just try to make the priority queue for this graph, all doubts will
     // be clear.
 
+   //  In Prim's algorithm we can start making mst from any node, but we will have to track wt of previously unused
+   //   node weights.
+
 	public:
 	//Function to find sum of weights of edges of the Minimum Spanning Tree.
     int spanningTree(int V, vector<vector<int>> adj[])
